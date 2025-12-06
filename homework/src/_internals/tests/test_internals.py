@@ -2,19 +2,17 @@ import os
 import shutil
 import sys
 
-from ...wordcount import (
-    count_words,
-    parse_args,
-    preprocess_lines,
-    split_into_words,
-    write_word_counts,
-)
+from ...wordcount import parse_args
+from ..count_words import count_words
+from ..preprocess_lines import preprocess_lines
 from ..read_all_lines import read_all_lines
+from ..split_into_words import split_into_words
+from ..write_word_counts import write_word_counts
 
 
 def test_parse_args():
     """Llamada en el prompt:
-    $ python3 -m homework data/input/ data/output/
+    $ python -m homework data/input/ data/output/
     """
     test_args = ["homework", "data/input/", "data/output/"]
     sys.argv = test_args
